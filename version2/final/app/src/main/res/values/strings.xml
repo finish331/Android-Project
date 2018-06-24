@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">期末專題</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="certain">確定</string>
+    <string name="clear">全部清除</string>
+    <string name="text123">輸入發票末三碼：</string>
+</resources>
