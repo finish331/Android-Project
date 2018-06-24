@@ -2,6 +2,7 @@ package com.e.user.myapplication;
 
 import android.app.FragmentTransaction;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -68,6 +69,11 @@ public class MainActivity extends AppCompatActivity {
             case MENU_MONTH3:
                 type = 2;
                 return true;
+            case MENU_PLAYGAME:
+                Intent it = new Intent();
+                it.setClass(MainActivity.this, GameActivity.class);
+                startActivity(it);
+                return true;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -80,7 +86,6 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public Fragment getItem(int position){
             Fragment fragment = null;
-
             switch (position){
                 case  0:
                     fragment = new first();
@@ -94,10 +99,12 @@ public class MainActivity extends AppCompatActivity {
             }
             return  fragment;
         }
+
         @Override
         public int getCount() {
             return 3;
         }
+
         @Override
         public CharSequence getPageTitle(int position){
             switch (position){
