@@ -46,6 +46,19 @@ public class GameActivity extends AppCompatActivity {
         mImgBtnPlayer.setOnClickListener(mImgBtnPlayerOnClick);
     }
 
+    private void commercial (){
+        new AlertDialog.Builder(GameActivity.this)
+                .setTitle("廣告訊息")
+                .setIcon(R.mipmap.ic_launcher)
+                .setMessage("老師拜託讓我們過啦")
+                .setPositiveButton("關掉廣告", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog,int which){
+                    }
+                })
+                .show();
+    }
+
     private class StaticHandler extends Handler {
         private final WeakReference<GameActivity> mActivity;
 
@@ -172,26 +185,12 @@ public class GameActivity extends AppCompatActivity {
                     activity.mImgComputer.setImageResource(R.drawable.ks);
                     break;
             }
-
-            if(mCount %10 == 1){
+            if(mCount%10 == 1){
                 commercial();
             }
-
         }
     }
 
-    private void commercial (){
-        new AlertDialog.Builder(GameActivity.this)
-                .setTitle("廣告訊息")
-                .setIcon(R.mipmap.ic_launcher)
-                .setMessage("老師拜託讓我們過啦")
-                .setPositiveButton("關掉廣告", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog,int which){
-                    }
-                })
-                .show();
-    }
 
     public final GameActivity.StaticHandler mHandler = new GameActivity.StaticHandler(this);
 
@@ -232,8 +231,13 @@ public class GameActivity extends AppCompatActivity {
                 @Override
                 public void run() {
                     try {
+<<<<<<< HEAD
                         Thread.sleep(5000);
                 } catch (Exception e) {
+=======
+                        Thread.sleep(2000);
+                    } catch (Exception e) {
+>>>>>>> c29474184af981eb1f2c8492f9d0c580b1d936eb
                         e.printStackTrace();
                     }
                     animDraw1.stop();
@@ -241,6 +245,10 @@ public class GameActivity extends AppCompatActivity {
                     mHandler.sendMessage(mHandler.obtainMessage());
                 }
             }).start();
+<<<<<<< HEAD
+=======
+
+>>>>>>> c29474184af981eb1f2c8492f9d0c580b1d936eb
         }
     };
 
