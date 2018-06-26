@@ -233,7 +233,7 @@ public class GameActivity extends AppCompatActivity {
                 public void run() {
                     try {
                         Thread.sleep(5000);
-                    } catch (Exception e) {
+                } catch (Exception e) {
                         e.printStackTrace();
                     }
                     animDraw1.stop();
@@ -241,15 +241,11 @@ public class GameActivity extends AppCompatActivity {
                     mHandler.sendMessage(mHandler.obtainMessage());
                 }
             }).start();
-
-
         }
     };
 
     private void showResult() {
         // 從 Bundle 物件中取出資料
         Bundle bundle = getIntent().getExtras();
-
-
     }
 }
