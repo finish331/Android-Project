@@ -46,6 +46,19 @@ public class GameActivity extends AppCompatActivity {
         mImgBtnPlayer.setOnClickListener(mImgBtnPlayerOnClick);
     }
 
+    private void commercial (){
+        new AlertDialog.Builder(GameActivity.this)
+                .setTitle("廣告訊息")
+                .setIcon(R.mipmap.ic_launcher)
+                .setMessage("老師拜託讓我們過啦")
+                .setPositiveButton("關掉廣告", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog,int which){
+                    }
+                })
+                .show();
+    }
+
     private class StaticHandler extends Handler {
         private final WeakReference<GameActivity> mActivity;
 
@@ -172,26 +185,12 @@ public class GameActivity extends AppCompatActivity {
                     activity.mImgComputer.setImageResource(R.drawable.ks);
                     break;
             }
-
-            if(mCount %10 == 1){
+            if(mCount%10 == 1){
                 commercial();
             }
-
         }
     }
 
-    private void commercial (){
-        new AlertDialog.Builder(GameActivity.this)
-                .setTitle("廣告訊息")
-                .setIcon(R.mipmap.ic_launcher)
-                .setMessage("老師拜託讓我們過啦")
-                .setPositiveButton("關掉廣告", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog,int which){
-                    }
-                })
-                .show();
-    }
 
     public final GameActivity.StaticHandler mHandler = new GameActivity.StaticHandler(this);
 
@@ -232,7 +231,7 @@ public class GameActivity extends AppCompatActivity {
                 @Override
                 public void run() {
                     try {
-                        Thread.sleep(5000);
+                        Thread.sleep(2000);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -242,14 +241,11 @@ public class GameActivity extends AppCompatActivity {
                 }
             }).start();
 
-
         }
     };
 
     private void showResult() {
         // 從 Bundle 物件中取出資料
         Bundle bundle = getIntent().getExtras();
-
-
     }
 }
