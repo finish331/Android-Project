@@ -14,6 +14,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.view.animation.Animation;
 
 import java.lang.ref.WeakReference;
 
@@ -172,6 +173,10 @@ public class GameActivity extends AppCompatActivity {
                     break;
             }
 
+            if(mCount %10 == 1){
+                commercial();
+            }
+
         }
     }
 
@@ -209,9 +214,6 @@ public class GameActivity extends AppCompatActivity {
     private View.OnClickListener mImgBtnPlayerOnClick = new View.OnClickListener() {
         public void onClick(View v) {
             mCount ++;
-            if(mCount % 10 == 1){
-                commercial();
-            }
 
             // 從程式資源中取得動畫檔，設定給ImageView物件，然後開始播放。
             Resources res = getResources();
