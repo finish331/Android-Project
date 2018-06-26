@@ -231,13 +231,9 @@ public class GameActivity extends AppCompatActivity {
                 @Override
                 public void run() {
                     try {
-<<<<<<< HEAD
                         Thread.sleep(5000);
-                } catch (Exception e) {
-=======
-                        Thread.sleep(2000);
-                    } catch (Exception e) {
->>>>>>> c29474184af981eb1f2c8492f9d0c580b1d936eb
+                    }
+                    catch (Exception e) {
                         e.printStackTrace();
                     }
                     animDraw1.stop();
@@ -245,10 +241,6 @@ public class GameActivity extends AppCompatActivity {
                     mHandler.sendMessage(mHandler.obtainMessage());
                 }
             }).start();
-<<<<<<< HEAD
-=======
-
->>>>>>> c29474184af981eb1f2c8492f9d0c580b1d936eb
         }
     };
 
